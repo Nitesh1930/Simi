@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ff7aa8">
+<title>For Simran Niteshkumar Tarale 💗</title>
+<style>
+:root{--pink:#ff6f9f;--deep:#e94f86;--cream:#fff8fb;--ink:#49313d}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;overflow:hidden;
+font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);
+background:radial-gradient(circle at 20% 15%,#ffe3ed 0 12%,transparent 35%),
+radial-gradient(circle at 85% 80%,#ffd0e2 0 10%,transparent 35%),linear-gradient(135deg,#fff5f8,#ffe0eb)}
+.hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-40px;color:#ff7da8;opacity:.6;animation:floatUp linear infinite}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.card{position:relative;width:min(92vw,420px);padding:30px 22px 28px;text-align:center;
+background:rgba(255,255,255,.83);border:2px solid rgba(255,255,255,.95);border-radius:30px;
+box-shadow:0 18px 55px #d75d8a2b;backdrop-filter:blur(8px);z-index:1}
+.eyebrow{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:#c85b82;font-weight:800}
+h1{font-family:Georgia,serif;font-size:clamp(1.8rem,7vw,2.35rem);line-height:1.15;margin:10px 0;color:#6e344d}
+.name{display:block;color:#e64f88}
+.subtitle{font-size:1rem;line-height:1.55;margin:12px auto 18px;max-width:310px}
+.character{font-size:6.2rem;line-height:1.2;filter:drop-shadow(0 7px 3px #e77ca52b);animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-7px)}}
+.question{font-size:1.12rem;font-weight:800;margin:12px 0 18px}
+.buttons{display:flex;gap:12px;justify-content:center;align-items:center;min-height:52px;flex-wrap:wrap}
+button{font:inherit;font-weight:800;border:0;border-radius:999px;padding:13px 25px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+#yes{color:white;background:linear-gradient(135deg,#ff78a6,#e94f86);box-shadow:0 7px 18px #e94f8645}
+#yes:hover{transform:translateY(-2px) scale(1.04)}
+#no{color:#b84870;background:#fff0f5;border:1px solid #ffc0d5}
+.note{min-height:22px;margin:15px 0 0;color:#b34e75;font-size:.88rem}
+.result{display:none;margin-top:20px;padding:17px 14px;border-radius:20px;background:#fff0f6;animation:pop .5s ease both}
+.result h2{font-family:Georgia,serif;color:#d83f79;margin:5px 0 8px}
+.result p{line-height:1.55;margin:8px 0}
+@keyframes pop{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+.signature{margin-top:22px;font-size:.82rem;color:#a65b79}
+.sparkle{position:fixed;pointer-events:none;z-index:5;font-size:24px;animation:burst 1.3s ease-out forwards}
+@keyframes burst{from{transform:translate(0,0) scale(.5);opacity:1}to{transform:translate(var(--x),var(--y)) scale(1.5);opacity:0}}
+@media(max-height:700px){.card{padding:20px 18px}.character{font-size:4.7rem}h1{font-size:1.8rem}.subtitle{margin:8px auto 12px}}
+</style>
+</head>
+<body>
+<div class="hearts" id="hearts"></div>
+<main class="card">
+  <div class="eyebrow">A tiny question for you 💌</div>
+  <h1>Hey, <span class="name">Simran Niteshkumar Tarale</span> 💗</h1>
+  <p class="subtitle">I made this little corner of the internet just for you. There’s something I want to ask…</p>
+  <div class="character" id="character" aria-label="Cute teddy bear">🥹</div>
+  <div class="question" id="question">Do you love me? 🥺👉👈</div>
+  <div class="buttons" id="buttons">
+    <button id="yes">Yes, of course! 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+  <p class="note" id="note">Choose honestly… my heart is watching 👀</p>
+  <section class="result" id="result">
+    <div style="font-size:3rem">🧸💞🧸</div>
+    <h2>Sending you the biggest virtual hug!</h2>
+    <p>Simran, you make ordinary moments feel special. I hope this little surprise makes you smile today. ❤️</p>
+    <p><strong>You’re precious to me. Always remember that. 💋</strong></p>
+    <button id="again" style="margin-top:7px;background:#ffe0ec;color:#b83e70">Hug me again 🫂</button>
+  </section>
+  <div class="signature">Made with lots of love, just for you ✨</div>
+</main>
+<script>
+const hearts=document.getElementById('hearts');
+for(let i=0;i<22;i++){const h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','💗','✦'][i%4];h.style.left=Math.random()*100+'%';h.style.animationDuration=(7+Math.random()*9)+'s';h.style.animationDelay=(-Math.random()*14)+'s';h.style.fontSize=(14+Math.random()*20)+'px';hearts.appendChild(h)}
+const no=document.getElementById('no'),yes=document.getElementById('yes'),note=document.getElementById('note');
+let noCount=0;
+const teasing=['Are you sure? 🥺','Think one more time na 😭','My teddy is crying now 🧸','Please reconsider? 💗','That button is getting shy 🙈'];
+no.addEventListener('click',()=>{
+ noCount++;note.textContent=teasing[Math.min(noCount-1,teasing.length-1)];
+ document.getElementById('character').textContent=['🥺','😭','🐻','🥹','💗'][Math.min(noCount-1,4)];
+ const scale=Math.max(.62,1-noCount*.07);yes.style.transform=`scale(${1+Math.min(noCount*.06,.35)})`;
+ no.style.transform=`scale(${scale})`;
+ if(noCount>=4){no.textContent='Maybe YES? 💕';}
+});
+function celebrate(){
+ document.getElementById('question').textContent='I knew it! You made me smile 💘';
+ document.getElementById('character').textContent='🥰';
+ document.getElementById('buttons').style.display='none';
+ note.style.display='none';document.getElementById('result').style.display='block';
+ for(let i=0;i<26;i++){const s=document.createElement('span');s.className='sparkle';s.textContent=['💖','💕','✨','💗','❤️'][i%5];s.style.left=(35+Math.random()*30)+'vw';s.style.top=(35+Math.random()*30)+'vh';s.style.setProperty('--x',(Math.random()-.5)*300+'px');s.style.setProperty('--y',(Math.random()-.5)*300+'px');document.body.appendChild(s);setTimeout(()=>s.remove(),1400)}
+}
+yes.addEventListener('click',celebrate);
+document.getElementById('again').addEventListener('click',()=>{document.getElementById('character').textContent='🧸💗🧸';for(let i=0;i<12;i++){const s=document.createElement('span');s.className='sparkle';s.textContent='💞';s.style.left=(35+Math.random()*30)+'vw';s.style.top=(40+Math.random()*20)+'vh';s.style.setProperty('--x',(Math.random()-.5)*220+'px');s.style.setProperty('--y',(Math.random()-.5)*220+'px');document.body.appendChild(s);setTimeout(()=>s.remove(),1400)}});
+</script>
+</body>
+</html>
